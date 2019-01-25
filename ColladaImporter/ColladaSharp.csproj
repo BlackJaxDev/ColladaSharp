@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D7A71232-B56E-44CA-8A3E-B36DB96A5EFC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ColladaSharp</RootNamespace>
+    <AssemblyName>ColladaSharp</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>7.2</LangVersion>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>latest</LangVersion>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="XMLSchemaDefinition, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\XMLSchemaDefinition.1.0.0\lib\netstandard2.0\XMLSchemaDefinition.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Collada.cs" />
+    <Compile Include="Export\AssetEncoder.cs" />
+    <Compile Include="Import\AssetDecoder.cs" />
+    <Compile Include="Export\ColladaExportOptions.cs" />
+    <Compile Include="Import\ColladaImportOptions.cs" />
+    <Compile Include="Transforms\ColorF4.cs" />
+    <Compile Include="Definition\Common.cs" />
+    <Compile Include="Definition\ElementString.cs" />
+    <Compile Include="Definition\Enums.cs" />
+    <Compile Include="Definition\Interfaces.cs" />
+    <Compile Include="Definition\Schema.cs" />
+    <Compile Include="Export\Exporter.cs" />
+    <Compile Include="Tools\Extensions.cs" />
+    <Compile Include="Models\Material.cs" />
+    <Compile Include="Models\SubMesh.cs" />
+    <Compile Include="Models\Primitives\DataBuffer.cs" />
+    <Compile Include="Models\Primitives\FacePoint.cs" />
+    <Compile Include="Models\Primitives\Faces\Index\IndexLine.cs" />
+    <Compile Include="Models\Primitives\Faces\Index\IndexLineStrip.cs" />
+    <Compile Include="Models\Primitives\Faces\Index\IndexNgon.cs" />
+    <Compile Include="Models\Primitives\Faces\Index\IndexPoint.cs" />
+    <Compile Include="Models\Primitives\Faces\Index\IndexPrimitive.cs" />
+    <Compile Include="Models\Primitives\Faces\Index\IndexQuad.cs" />
+    <Compile Include="Models\Primitives\Faces\Index\IndexQuadStrip.cs" />
+    <Compile Include="Models\Primitives\Faces\Index\IndexTriangle.cs" />
+    <Compile Include="Models\Primitives\Faces\Index\IndexTriangleFan.cs" />
+    <Compile Include="Models\Primitives\Faces\Index\IndexTriangleStrip.cs" />
+    <Compile Include="Models\Primitives\Faces\Vertex\Vertex.cs" />
+    <Compile Include="Models\Primitives\Faces\Vertex\VertexLine.cs" />
+    <Compile Include="Models\Primitives\Faces\Vertex\VertexLineStrip.cs" />
+    <Compile Include="Models\Primitives\Faces\Vertex\VertexPrimitive.cs" />
+    <Compile Include="Models\Primitives\Faces\Vertex\VertexQuad.cs" />
+    <Compile Include="Models\Primitives\Faces\Vertex\VertexTriangle.cs" />
+    <Compile Include="Models\Primitives\Faces\Vertex\VertexTriangleFan.cs" />
+    <Compile Include="Models\Primitives\Faces\Vertex\VertexTriangleStrip.cs" />
+    <Compile Include="Models\Primitives\PrimitiveData\PrimitiveDataConstruction.cs" />
+    <Compile Include="Models\Primitives\PrimitiveData\PrimitiveDataMembers.cs" />
+    <Compile Include="Models\Primitives\PrimitiveData\PrimitiveDataMethods.cs" />
+    <Compile Include="Models\Primitives\VertexShaderDesc.cs" />
+    <Compile Include="Models\Skeletal\Skeleton\Bone.cs" />
+    <Compile Include="Models\Skeletal\Skeleton\BoneWeight.cs" />
+    <Compile Include="Models\Skeletal\Skeleton\Influence.cs" />
+    <Compile Include="Models\Skeletal\Skeleton\Skeleton.cs" />
+    <Compile Include="Models\Model.cs" />
+    <Compile Include="ColladaScene.cs" />
+    <Compile Include="Tools\Remapper.cs" />
+    <Compile Include="Transforms\Matrix4.cs" />
+    <Compile Include="Import\Importer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Transforms\Quat.cs" />
+    <Compile Include="Transforms\Transform.cs" />
+    <Compile Include="Transforms\Vec2.cs" />
+    <Compile Include="Transforms\Vec3.cs" />
+    <Compile Include="Transforms\Vec4.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
